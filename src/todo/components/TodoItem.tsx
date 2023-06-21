@@ -6,7 +6,6 @@ interface TodoItemProps {
 }
 
 export const TodoItem = ({ todo }: TodoItemProps) => {
-  // const { toggleTodo } = useContext(TodoContext);
   const { toggleTodo } = useTodos();
 
   return (

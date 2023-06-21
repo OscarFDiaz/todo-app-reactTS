@@ -5,18 +5,7 @@ import { todoReducer } from './todoReducer';
 
 const INITIAL_STATE: TodoState = {
   todoCount: 0,
-  todos: [
-    {
-      id: '1',
-      desc: 'description',
-      completed: false,
-    },
-    {
-      id: '2',
-      desc: 'description 2',
-      completed: false,
-    },
-  ],
+  todos: [],
   completed: 0,
   pending: 0,
 };
@@ -32,8 +21,12 @@ export const TodoProvider = ({ children }: TodoProviderProps) => {
     dispatch({ type: 'toggleTodo', payload: { id } });
   };
 
+  const addTodo = (id: string, desc: string) => {
+    dispatch({ type: 'addTodo', payload: { id, desc, completed: false } });
+  };
+
   return (
-    <TodoContext.Provider value={{ todoState, toggleTodo }}>
+    <TodoContext.Provider value={{ todoState, toggleTodo, addTodo }}>
       {children}
     </TodoContext.Provider>
   );
