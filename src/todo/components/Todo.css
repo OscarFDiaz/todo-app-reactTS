@@ -1,0 +1,22 @@
+.todo__list {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1em;
+
+  margin-bottom: 2em;
+}
+
+.todo__item {
+  height: 3em;
+  width: 350px;
+  text-align: center;
+  background-color: #353535;
+  border-radius: 8px;
+  line-height: 3em;
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 8px;
+}

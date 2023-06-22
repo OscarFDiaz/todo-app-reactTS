@@ -9,6 +9,11 @@ export const NewTodo = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (input === '') {
+      alert('Escribe que te falta por hacer');
+      return;
+    }
+
     addTodo((currentTodoId + 1).toString(), input, false);
     setinput('');
   };
